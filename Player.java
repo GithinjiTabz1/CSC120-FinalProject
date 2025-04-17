@@ -26,6 +26,8 @@ public class Player {
     public void setPosition(int position){
         this.position=position;//setter cause this is the only one we need to manipulate
     }
+    
+
 
     public String getCurrPosition() {
         return currPosition;
