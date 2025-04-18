@@ -1,33 +1,29 @@
 public class LollipopCastle extends Castle {
-    
-    // Attributes
-    private int jumpAttempts;  // Number of tries allowed
+    private int jumpAttempts;
 
-    // Constructor
     public LollipopCastle() {
         super("Lollipop Castle");
-        this.jumpAttempts = 2;  // Set number of jump attempts
+        this.jumpAttempts = 2; // Number of chances the player has to jump correctly
     }
 
-    // Start the jumping challenge
-    public void startChallenge() {
-        // 1. Announce the challenge and rules
-        // 2. Loop for number of attempts:
-            // - Prompt player to enter jump height
-            // - Call jumpChallenge(height)
-            // - If jump successful: print success message, break
-            // - If jump fails and no attempts left: end challenge
-        // 3. Based on success/failure:
-            // - "You may now proceed to the Frosted Palace."
-            // - "Sorry, you failed the challenge. Game over."
-    }
-
-    // Determines if the jump is successful
     public boolean jumpChallenge(int height) {
-        // Check if height meets a success condition
-        // Return true if successful, false otherwise
+        /*
+         * Logic:
+         * - If height is within the safe range (e.g., 5 to 10), the jump is successful.
+         * - If height is too low (e.g., < 5), the player falls short and "dies".
+         * - If height is too high (e.g., > 10), the player hits something and "dies".
+         * - Allow the player up to 'jumpAttempts' to get it right.
+         */
+
+        // Placeholder return for now — actual logic to be implemented
+        return false;
+    }
+
+    public int getJumpAttempts() {
+        return jumpAttempts;
+    }
+
+    public void resetJumpAttempts() {
+        this.jumpAttempts = 2; //to reset when retrying
     }
 }
-
-
-// and jump too hgh...
