@@ -7,12 +7,16 @@ public class Map {
     private String queenCandysCastle;
 
 
+    /* Constructor */
     public Map(){
 
     }
 
     public String peppermintForest(){
         return this.peppermintForest;
+        /*
+         * 
+         */
     }
 
     public String nanasNutHouse(){
@@ -35,6 +39,6 @@ public class Map {
         return this.queenCandysCastle;
     }
 
-    /*Navigate through lagoon */
+    /*Navigate through Map */
 }
 

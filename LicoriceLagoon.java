@@ -6,11 +6,14 @@ public class LicoriceLagoon {
 
     public LicoriceLagoon(){
 
-
     }
 
     public int guessNumber(){
         return this.selectNumber;
+        /*
+         * When you land in the lagoon
+         *  you will need to guess the number 
+         */
     }
 
     public Boolean proceedTrivia(){
@@ -23,7 +26,6 @@ public class LicoriceLagoon {
 
     public String proceedOrNot(){
         return this.acceptance;
-
     }
 
     /*Navigate through lagoon */
