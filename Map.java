@@ -1,10 +1,7 @@
 public class Map {
-    private String peppermintForest;
-    private String nanasNuttHouse;
-    private String licoriceLagoon;
-    private String lollipopPalace;
-    private String frostedPalace;
-    private String queenCandysCastle;
+    private Boolean position ;
+    private String colorBlocks;
+    private String playerPosition;
 
 
     /* Constructor */
@@ -12,33 +9,17 @@ public class Map {
 
     }
 
-    public String peppermintForest(){
-        return this.peppermintForest;
-        /*
-         * 
-         */
+    public Boolean indexPosition(){
+        return this.position;
     }
 
-    public String nanasNutHouse(){
-        return this.nanasNuttHouse;
+    public String gameBlocks(){
+        return this.colorBlocks;
     }
 
-    public String licoriceLagoon(){
-        return this.licoriceLagoon;
+    public String playerPosition(){
+        return this.playerPosition;
     }
 
-    public String lollipopPalace(){
-        return this.lollipopPalace;
-    }
-
-    public String frostedPalace(){
-        return this.frostedPalace;
-    }
-
-    public String queenCandysCastle(){
-        return this.queenCandysCastle;
-    }
-
-    /*Navigate through Map */
 }
 
