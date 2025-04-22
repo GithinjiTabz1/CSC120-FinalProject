@@ -9,7 +9,7 @@ public class Nana_NutHouse {
     private int nGlutenFreeFlourPower;
     
     public Nana_NutHouse() {
-
+//add method for nanahouse where if you get the number right you get a gluten-free cake for Kandy Kastle --> 
     }
 
     public int chocoBridgeNumber() {
@@ -23,7 +23,7 @@ public class Nana_NutHouse {
         //advance to nana nut house if even number is typed? if, else
     }
 
-
+//peppermint forest change position to #20
     public boolean scavengerHunt() {
         return this.discoverIngredients;
         //hide sugar, candy, and gluten-free flour for Nana's home. if found advance straight to Nana's house

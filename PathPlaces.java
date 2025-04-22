@@ -12,7 +12,7 @@ public PathPlaces() {
     this.selectNumber = selectNumber;
     this.secretObjects = secretObjects;
 }
-
+//all need trivea question
 // attributes
 // constructor 
 //random number
