@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class PathPlaces {
@@ -25,19 +26,18 @@ public Boolean proceedTrivia(){
 public String triviaQuestions(){
     return this.triviaQuestions;
 }
-
+//random array list of questions similar to chatbot
 public String proceedOrNot(){
     return this.acceptance;
 }
-//all need trivea question
-// attributes
-// constructor 
-//random number
-//random objects
+
 public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
+    ArrayList<String> triviaQuestions = new ArrayList<>();
+    triviaQuestions.add("What is the secret to Nana's bizcocho recipe?");
+
     PathPlaces LicoriceLagoon = new PathPlaces("Licorice Lagoon", true, "What is the secret to Nana's bizcocho recipe?", "Yes, I accept the challenge.");
     System.out.println("Location:" + LicoriceLagoon.getName());
-    
+
 }
 }

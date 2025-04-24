@@ -1,14 +1,17 @@
 import java.util.Scanner;
 import java.util.Random;
 
-public class Nana_NutHouse {
+public class Nana_NutHouse extends PathPlaces{
     private int selectNumber;
     private boolean discoverIngredients;
-    private int nSugarCubes;
-    private int nCandyFlowers;
-    private int nGlutenFreeFlourPower;
+    private String NanasCake;
     
-    public Nana_NutHouse() {
+    public Nana_NutHouse(String name, Boolean trivia, String triviaQuestion, String acceptance, int selectNumber, boolean discoverIngredients, String NanasCake) {
+        super (name, trivia, triviaQuestion, acceptance);
+        this.selectNumber = selectNumber;
+        this.discoverIngredients = discoverIngredients;
+        this.NanasCake = NanasCake;
+
 //add method for nanahouse where if you get the number right you get a gluten-free cake for Kandy Kastle --> 
     }
 
