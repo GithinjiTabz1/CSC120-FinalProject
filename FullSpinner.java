@@ -6,19 +6,16 @@ public class FullSpinner {
 
     public  FullSpinner(){
         this.parts = new ArrayList<>();
-        //addParts();
     }
 
 
 public void addParts(){
     parts.add(new SpinnerPart("Red"));
+    parts.add(new SpinnerPart("Purple"));
     parts.add(new SpinnerPart("Yellow"));
-    parts.add(new SpinnerPart("Blue"));
-    parts.add(new SpinnerPart("Orange"));    
-    parts.add(new SpinnerPart("Red"));
-    parts.add(new SpinnerPart("Yellow"));
-    parts.add(new SpinnerPart("Blue"));
-    parts.add(new SpinnerPart("Orange")); 
+    parts.add(new SpinnerPart("Blue"));    
+    parts.add(new SpinnerPart("Orange"));
+    parts.add(new SpinnerPart("Green"));
 
     //adding my  candies
 
@@ -37,7 +34,8 @@ public void addParts(){
 // }
 public String spin(){
     int Index = random.nextInt(parts.size());   //is it not recognizing random?
-    return parts.get(Index).toString();
+    String  part = parts.get(Index).toString();
+    return part ;//the thing that 
     //how could i do this without a getOutput variable
     
     
