@@ -1,40 +1,38 @@
-import java.util.ArrayList;
+import java.util.Hashtable;
+import java.util.Random;
 import java.util.Scanner;
 
 public class PathPlaces {
-    
+    protected Hashtable<String,String> triviaBoard;
     protected String name;
-    protected Boolean trivia;
-    protected String triviaQuestions;
-    protected String acceptance;
+    protected Boolean triviaAcceptance;
 
-public PathPlaces(String name, Boolean trivia, String triviaQuestion, String acceptance) {
+public PathPlaces(String name, Boolean triviaAcceptance) {
     this.name = name;
-    this.trivia = trivia;
-    this.triviaQuestions = triviaQuestions;
-    this.acceptance = acceptance;
+    this.triviaAcceptance = triviaAcceptance;
+    this.triviaBoard = new Hashtable<String, String>();
 }
 
 public String getName() {
     return this.name;
 }
 
-public Boolean proceedTrivia(){
-    return this.trivia;
+public Boolean triviaAcceptance(){
+    return this.triviaAcceptance;
 }
 
-public String triviaQuestions(){
-    return this.triviaQuestions;
+public Hashtable triviaBoard(){
+    return this.triviaBoard;
 }
-//random array list of questions similar to chatbot
-public String proceedOrNot(){
-    return this.acceptance;
+//need help below
+public void addQuestion(String question, String answer) {
+    triviaBoard.put(question, answer);
 }
-
 public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
-    ArrayList<String> triviaQuestions = new ArrayList<>();
+    
     triviaQuestions.add("What is the secret to Nana's bizcocho recipe?");
+    triviaQuestions.add("What are the three most important ingredients for Nana's desserts?");
 
     PathPlaces LicoriceLagoon = new PathPlaces("Licorice Lagoon", true, "What is the secret to Nana's bizcocho recipe?", "Yes, I accept the challenge.");
     System.out.println("Location:" + LicoriceLagoon.getName());
