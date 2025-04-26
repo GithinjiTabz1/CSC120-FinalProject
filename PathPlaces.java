@@ -1,41 +1,51 @@
+/** 
+ * PathPlaces is the base class that each Peppermint Forest, Licorice Lagoon, and Nana's Nut House inherit from in this game.
+ * Each location, or Path Place, has a name and a number guessing challenge. If correct the player proceeds and if incorrect, the player must answer a trivia question stored in triviaBoard. The player will then proceed upon answering the question.
+*/
+
 import java.util.Hashtable;
-import java.util.Random;
 import java.util.Scanner;
 
 public class PathPlaces {
     protected Hashtable<String,String> triviaBoard;
     protected String name;
-    protected Boolean triviaAcceptance;
+    protected boolean triviaAcceptance;
+    protected int playerInput;
 
-public PathPlaces(String name, Boolean triviaAcceptance) {
+public PathPlaces(String name, boolean triviaAcceptance, int playerInput) {
     this.name = name;
     this.triviaAcceptance = triviaAcceptance;
+    this.playerInput = playerInput;
     this.triviaBoard = new Hashtable<String, String>();
 }
 
-public String getName() {
+public void printPathName() {
+    System.out.println("Welcome to " + this.name + "!");
+}
+
+public String getPathName() {
     return this.name;
 }
 
-public Boolean triviaAcceptance(){
+public boolean isTriviaAccepted(){
     return this.triviaAcceptance;
 }
 
-public Hashtable triviaBoard(){
+public Hashtable<String, String> getTriviaBoard(){
     return this.triviaBoard;
 }
-//need help below
+
 public void addQuestion(String question, String answer) {
     triviaBoard.put(question, answer);
 }
 public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
     
-    triviaQuestions.add("What is the secret to Nana's bizcocho recipe?");
-    triviaQuestions.add("What are the three most important ingredients for Nana's desserts?");
+    // triviaQuestions.add("What is the secret to Nana's bizcocho recipe?");
+    // triviaQuestions.add("What are the three most important ingredients for Nana's desserts?");
 
-    PathPlaces LicoriceLagoon = new PathPlaces("Licorice Lagoon", true, "What is the secret to Nana's bizcocho recipe?", "Yes, I accept the challenge.");
-    System.out.println("Location:" + LicoriceLagoon.getName());
+    // PathPlaces LicoriceLagoon = new PathPlaces("Licorice Lagoon", true");
+    // System.out.println("Location:" + LicoriceLagoon.getName());
 
 }
 }
