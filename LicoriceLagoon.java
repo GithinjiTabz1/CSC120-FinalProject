@@ -1,4 +1,4 @@
-public class LicoriceLagoon {
+public class LicoriceLagoon extends PathPlaces{
     private int selectNumber;
     private Boolean trivia;
     private String triviaQuestions;
