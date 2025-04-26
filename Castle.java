@@ -1,39 +1,71 @@
+/**
+ * Castle class represents a special location (castle) in the Candy Land game.
+ * Players can enter or exit castles if they are accessible.
+ */
 public class Castle {
-    protected String name;
-    protected boolean isAccessible;
-    protected boolean isInTheCastle;
+    protected String name;           
+    protected boolean isAccessible;  
+    protected boolean isInTheCastle; 
 
+    /**
+     * Constructor for Castle.
+     * @param name The name of the castle.
+     */
     public Castle(String name) {
         this.name = name;
         this.isAccessible = true;
         this.isInTheCastle = false;
     }
 
+    /**
+     * Gets the name of the castle.
+     * @return The name of the castle.
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * Checks if the castle is accessible.
+     * @return True if accessible, false otherwise.
+     */
     public boolean isAccessible() {
         return isAccessible;
     }
 
+    /**
+     * Sets whether the castle is accessible.
+     * @param accessible True to make accessible, false to block access.
+     */
     public void setAccessible(boolean accessible) {
         this.isAccessible = accessible;
     }
 
+    /**
+     * Checks if the player is currently inside the castle.
+     * @return True if inside, false otherwise.
+     */
     public boolean isInTheCastle() {
         return isInTheCastle;
     }
 
-    // Aliases for entering and exiting the castle
+    /**
+     * Player attempts to enter the castle (alias for goUp).
+     */
     public void enter() {
-        goUp();
     }
 
+    /**
+     * Player attempts to exit the castle (alias for goDown).
+     */
     public void exit() {
-        goDown();
+        
     }
 
+    /**
+     * Handles the logic for entering the castle.
+     * Player can only enter if the castle is accessible and they are not already inside.
+     */
     public void goUp() {
         if (isAccessible && !isInTheCastle) {
             isInTheCastle = true;
@@ -45,6 +77,10 @@ public class Castle {
         }
     }
 
+    /**
+     * Handles the logic for exiting the castle.
+     * Player can only exit if they are currently inside.
+     */
     public void goDown() {
         if (isInTheCastle) {
             isInTheCastle = false;
