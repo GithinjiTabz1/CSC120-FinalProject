@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+
 public class Map {
     private Boolean position ;
     private String colorBlocks;
@@ -48,25 +49,29 @@ public class Map {
         }
 
         map.get(playerIndex).setIndexPosition(true);
-        map.get(playerIndex).setPlayerPosition("Player 1");
+        map.get(playerIndex).setPlayerPosition(Player.getName);
 
-        String spinColor = spinner.spin();
-        System.out.println("Spinner result: " + spinColor);
+        String spunColor = spinner.spun();
+        System.out.println("Spinner result: " + spunColor);
 
+        int currentPos = Player.getPosition();
         int newIndex = -1;
         for (int i = playerIndex + 1; i < map.size(); i++){
-            if (map.get(i).gameBlocks().equalsIgnoreCase(spinColor)){
+            if (map.get(i).gameBlocks().equalsIgnoreCase(spunColor)){
                 newIndex = i;
                 break;
             }
-        }
+            else {
+                System.out.println("There are no tiles of that color ahead.");
+            }
 
         if (newIndex != -1){
             map.get(playerIndex).setIndexPosition(false);
             map.get(playerIndex).setPlayerPosition("None");
-            
-
-        }
-
+            map.get(newIndex).setIndexPosition(true);
+            map.get(newIndex).setPlayerPosition(Player.getName);
+            playerIndex = newIndex;
+            System.out.println("Player " + getName + " is now at " + playerIndex);
+        }  
     }
-} 
+}
