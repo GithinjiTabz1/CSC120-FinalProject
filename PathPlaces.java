@@ -6,6 +6,7 @@
 import java.util.Hashtable;
 import java.util.Scanner;
 
+
 public class PathPlaces {
     protected Hashtable<String,String> triviaBoard;
     protected String name;
@@ -49,3 +50,6 @@ public static void main(String[] args) {
 
 }
 }
+
+// Hashtable<String, String> triviaBoard = new Hashtable<String, String>();
+// triviaBoard.put("What is the secret to Nana's bizcocho recipe?", "e");

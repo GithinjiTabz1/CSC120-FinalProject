@@ -14,7 +14,7 @@ public class PeppermintForest extends PathPlaces{
 
         if (playerInput >= 1 && playerInput <= 10000) {
             if (playerInput % 2 != 0) {
-                System.out.println("Way to go! Exactly " + playerInput + " peppermint candy canes make up the Peppermint Forest! You can advance to the next block. Remember to grab a candy cane on your way out.");
+                System.out.println("Way to go! Exactly " + playerInput + " peppermint candy canes make up the Peppermint Forest! You can advance to the next tile. Remember to grab a candy cane on your way out.");
             } else {
                 System.out.println("Unfortunately " + playerInput + " is not the correct amount of peppermint candy canes that make up the Peppermint Forest. You can continue on your path, but you may not take a peppermint candy cane. Good luck!");
             }
