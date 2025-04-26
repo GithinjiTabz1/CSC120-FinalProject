@@ -7,8 +7,8 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        FullSpinner spinner = new FullSpinner(); // Simulates spinning the wheel
-        Player player = new Player();            // Tracks player tile, keys, alive status, and win status
+        FullSpinner spinner = new FullSpinner(); 
+        Player player = new Player();            
 
         System.out.println("Welcome to Candy Land!");
         System.out.println("You are currently on Tile " + player.currentposition());
@@ -26,10 +26,12 @@ public class Main {
                 System.out.println("You arrived at Peppermint Forest!");
                 peppermintForest peppermint = new peppermintForest();
                 peppermint.enter(player);
+
             } else if (tile == 10) {
                 System.out.println("Welcome to Nana’s Nuthouse!");
                 Nana_NutHousehouse nana = new Nana_NutHouse()Nuthouse();
                 nana.enter(player);
+                
             } else if (tile == 15) {
                 System.out.println("Entering Licorice Lagoon...");
                 licoriceLagoon lagoon = new licoriceLagoon();
