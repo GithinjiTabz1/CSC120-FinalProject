@@ -3,21 +3,21 @@
  * Each location, or Path Place, has a name and a number guessing challenge. If correct the player proceeds and if incorrect, the player must answer a trivia question stored in triviaBoard. The player will then proceed upon answering the question.
 */
 
-import java.util.Hashtable;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 
 public class PathPlaces {
-    protected Hashtable<String,String> triviaBoard;
     protected String name;
     protected boolean triviaAcceptance;
     protected int playerInput;
+    protected ArrayList<String> triviaQuestions;
 
 public PathPlaces(String name, boolean triviaAcceptance, int playerInput) {
     this.name = name;
     this.triviaAcceptance = triviaAcceptance;
     this.playerInput = playerInput;
-    this.triviaBoard = new Hashtable<String, String>();
+    this.triviaQuestions = new ArrayList<>();
 }
 
 public void printPathName() {
@@ -28,16 +28,14 @@ public String getPathName() {
     return this.name;
 }
 
+public void addString(String str) {
+    this.triviaQuestions.add("What is the one secret to Nana's bizcocho recipe?");
+    this.triviaQuestions.add("What is Queen Kandy's favorite color?");
+    this.triviaQuestions.add("What animal does Queen Kandy dream of having in her Castle?");
+}
+
 public boolean isTriviaAccepted(){
     return this.triviaAcceptance;
-}
-
-public Hashtable<String, String> getTriviaBoard(){
-    return this.triviaBoard;
-}
-
-public void addQuestion(String question, String answer) {
-    triviaBoard.put(question, answer);
 }
 public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);

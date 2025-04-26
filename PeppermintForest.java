@@ -1,4 +1,6 @@
 import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.Random;
 
 public class PeppermintForest extends PathPlaces{
     
@@ -17,6 +19,7 @@ public class PeppermintForest extends PathPlaces{
                 System.out.println("Way to go! Exactly " + playerInput + " peppermint candy canes make up the Peppermint Forest! You can advance to the next tile. Remember to grab a candy cane on your way out.");
             } else {
                 System.out.println("Unfortunately " + playerInput + " is not the correct amount of peppermint candy canes that make up the Peppermint Forest. You can continue on your path, but you may not take a peppermint candy cane. Good luck!");
+                String question = triviaQuestions.get(random.nextInt (triviaQuestions.size()));
             }
         } else { 
                 throw new IllegalArgumentException("Please enter a number between 1 and 10000.");
@@ -27,6 +30,9 @@ public class PeppermintForest extends PathPlaces{
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+
+        //PeppermintForest pfTest = new PeppermintForest("PF", false, 2);
+
 
         //PeppermintForest pfTest = new PeppermintForest("Peppermint Forest", true, 4238);
         //pfTest.printPathName();
