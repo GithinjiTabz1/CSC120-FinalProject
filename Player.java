@@ -4,14 +4,10 @@ import java.util.Scanner;
 
 public class Player {
     private String name;
-    private String color;
-    private String shape;
     private int positionIndex;
     private String currPosition;
-    private int lives;
     private Boolean isAlive;
     private ArrayList<SpinnerPart> tiles; //only added so i could test my move method , this arraylist should be declared within maybe a tile class or within the map class
-    
 
 
 
@@ -19,7 +15,6 @@ public class Player {
         this.name = name ;
         this.currPosition = "red";//if we have all the points on the map that the player can be at set up as an arraylist then im setting this to 0 as statring position
         this.positionIndex = 0;
-        this.lives = 3;
         this.isAlive = true;
         this.tiles = new ArrayList<>();
     }
@@ -53,7 +48,7 @@ public class Player {
     }
 
     public void move(String SpinnerPart, ArrayList<String> tiles){
-        this.positionIndex+=1; /
+        this.positionIndex+=1; 
        if (this.positionIndex >= tiles.size()) {
         this.positionIndex = tiles.size() - 1;
     }
