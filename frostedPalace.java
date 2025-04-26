@@ -10,9 +10,8 @@ public class FrostedPalace extends Castle {
 
     private int correctNumber;
     private int temperature;
-    private boolean isAlive;
-    private boolean hasKeyToFrostedPalace;
     private boolean hasKeyToKingKandy;
+    private boolean teleportedToKingKandy;
 
     /**
      * Constructs a new Frosted Palace.
@@ -22,70 +21,94 @@ public class FrostedPalace extends Castle {
         super("Frosted Palace");
         this.correctNumber = generateRandomNumber();
         this.temperature = 98;
-        this.isAlive = true;
-        this.hasKeyToFrostedPalace = false;
         this.hasKeyToKingKandy = false;
+        this.teleportedToKingKandy = false;
     }
 
     /**
      * Attempts to enter the Frosted Palace.
      * Only allows entry if the player has the key from Lollipop Castle.
+     * 
+     * @param hasKeyFromLollipopCastle true if player has the key, false otherwise
      */
     public void enter(boolean hasKeyFromLollipopCastle) {
         if (hasKeyFromLollipopCastle) {
-            System.out.println("\n You used the key to enter the Frosted Palace!");
+            System.out.println("\nYou used the key to enter the Frosted Palace!");
             startChallenge();
         } else {
-            System.out.println("\n You cannot enter the Frosted Palace without the key from Lollipop Castle!");
+            System.out.println("\nYou cannot enter the Frosted Palace without the key from Lollipop Castle!");
         }
     }
 
     /**
      * Starts the freezing number-guessing challenge.
-     * If successful, earns the player the key to King Kandy's Castle.
+     * If guessed correctly on the first try, player is teleported to King Kandy.
+     * Otherwise, the player either gets the key after more trials or freezes to death.
      */
     private void startChallenge() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("\nWelcome to the Frosted Palace.");
         System.out.println("Guess the number between 1 and 10. It's freezing in here!");
 
+        boolean firstAttempt = true;
+
         while (temperature > 0 && !hasKeyToKingKandy) {
             System.out.print("Enter your guess: ");
-            int guess = scanner.nextInt();
+            if (scanner.hasNextInt()) {
+                int guess = scanner.nextInt();
 
-            if (guess == correctNumber) {
-                System.out.println("Correct! You survived and earned the key to King Kandy’s Castle!");
-                hasKeyToKingKandy = true;
-                this.isAccessible = true; // Optional: If you want KingKandyCastle to check this
-                break;
-            } else {
-                temperature -= 10;
-                System.out.println("Incorrect! Your body temperature is now: " + temperature + "°F");
-                if (checkFrozen()) {
-                    System.out.println("You froze to death in the Frosted Palace...");
-                    isAlive = false;
+                if (guess == correctNumber) {
+                    System.out.println("Correct! You survived and earned the key to King Kandy’s Castle!");
+                    hasKeyToKingKandy = true;
+                    this.isAccessible = true;
+
+                    if (firstAttempt) {
+                        System.out.println("You guessed correctly on the first try! Teleporting you directly to King Kandy’s Castle...");
+                        teleportedToKingKandy = true;
+                        this.currPosition = 60; 
+                    } else {
+                        System.out.println("You guessed correctly, but you must take the long way to reach King Kandy’s Castle.");
+                        teleportedToKingKandy = false;
+                    }
                     break;
+                } else {
+                    temperature -= 10;
+                    System.out.println("Incorrect! Your body temperature is now: " + temperature + "°F");
+                    if (checkFrozen()) {
+                        System.out.println("You froze to death in the Frosted Palace...");
+                        break;
+                    }
                 }
+                firstAttempt = false;
+            } else {
+                System.out.println("Please enter a valid number.");
+                scanner.next(); // clear invalid input
             }
         }
     }
 
     /**
-     * Checks if the player is alive.
-     */
-    public boolean isAlive() {
-        return isAlive;
-    }
-
-    /**
      * Checks if the player has earned the key to King Kandy's Castle.
+     * 
+     * @return true if the player has the key, false otherwise
      */
     public boolean hasKeyToKingKandy() {
         return hasKeyToKingKandy;
     }
 
     /**
-     * Helper method to check if the player froze.
+     * Checks if the player teleported directly to King Kandy's Castle.
+     * 
+     * @return true if teleported, false otherwise
+     */
+    public boolean wasTeleported() {
+        return teleportedToKingKandy;
+    }
+
+    /**
+     * method to check if the player froze.
+     * 
+     * @return true if frozen, false otherwise
      */
     private boolean checkFrozen() {
         return temperature <= 0;
@@ -93,6 +116,8 @@ public class FrostedPalace extends Castle {
 
     /**
      * Generates a random number between 1 and 10.
+     * 
+     * @return a random number between 1 and 10
      */
     private int generateRandomNumber() {
         Random rand = new Random();
