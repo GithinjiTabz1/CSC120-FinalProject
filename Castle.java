@@ -49,24 +49,12 @@ public class Castle {
         return isInTheCastle;
     }
 
-    /**
-     * Player attempts to enter the castle (alias for goUp).
-     */
-    public void enter() {
-    }
-
-    /**
-     * Player attempts to exit the castle (alias for goDown).
-     */
-    public void exit() {
-        
-    }
-
+    
     /**
      * Handles the logic for entering the castle.
      * Player can only enter if the castle is accessible and they are not already inside.
      */
-    public void goUp() {
+    public void enter() {
         if (isAccessible && !isInTheCastle) {
             isInTheCastle = true;
             System.out.println("You have entered the " + name + ".");
@@ -81,7 +69,7 @@ public class Castle {
      * Handles the logic for exiting the castle.
      * Player can only exit if they are currently inside.
      */
-    public void goDown() {
+    public void exit() {
         if (isInTheCastle) {
             isInTheCastle = false;
             System.out.println("You have exited the " + name + ".");
