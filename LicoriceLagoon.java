@@ -38,7 +38,7 @@ import java.util.Scanner;
          */
         return this.acceptance;
         
-public class LicoriceLagoon extends PathPlaces{
+    public class LicoriceLagoon extends PathPlaces{
 
     public LicoriceLagoon(String name, int playerInput, ArrayList triviaQuestions) {
         super (name, playerInput, triviaQuestions);
