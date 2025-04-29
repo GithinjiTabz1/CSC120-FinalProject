@@ -95,7 +95,7 @@ public class Map {
                 System.out.println("There are no tiles of that color ahead.");
             }
         /*
-         * 
+         * Getting final player position after spinner.
          */
         if (newIndex != -1){
             map.get(playerIndex).setIndexPosition(false);
