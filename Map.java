@@ -12,9 +12,11 @@ public class Map {
         this.playerPosition = playerPosition;
     }
 
+
     /*
      * Index of each block of the map.
      */
+
     public Boolean indexPosition(){
         return this.position;
     }
@@ -22,6 +24,7 @@ public class Map {
     /*
      * Tiles of the map.
      */
+
     public String gameBlocks(){
         return this.colorBlocks;
     }
@@ -29,13 +32,16 @@ public class Map {
     /*
      * Name of the tile (color and index) which the player is in.
      */
+
     public String playerPosition(){
         return this.playerPosition;
     }
 
+
     /*
      * Establishing the player position, color blocks and index position of the tiles in the map.
      */
+
     public void setPlayerPosition(String playerPosition) {
         this.playerPosition = playerPosition;
     }
@@ -43,6 +49,48 @@ public class Map {
     public void setColorBlocks(String colorBlocks) {
         this.colorBlocks = colorBlocks;
     }
+
+
+    public void setIndexPosition(Boolean position) {
+        this.position = position;
+    }
+
+    public static void main(String[] args){
+        ArrayList<Map> map = new ArrayList<>();
+        FullSpinner spinner = new FullSpinner();
+        spinner.addParts();
+        String[] colors = {"Red", "Purple", "Yellow", "Blue", "Orange", "Green"};
+
+        for (int i = 0; i < 60; i++){
+            String color = colors[i % colors.length];
+            Map tiles = new Map(false, color, "None");
+            map.add(tiles);
+        }
+
+        map.get(playerIndex).setIndexPosition(true);
+        map.get(playerIndex).setPlayerPosition("Player 1");
+
+        String spinColor = spinner.spin();
+        System.out.println("Spinner result: " + spinColor);
+
+        int newIndex = -1;
+        for (int i = playerIndex + 1; i < map.size(); i++){
+            if (map.get(i).gameBlocks().equalsIgnoreCase(spinColor)){
+                newIndex = i;
+                break;
+            }
+        }
+
+        if (newIndex != -1){
+            map.get(playerIndex).setIndexPosition(false);
+            map.get(playerIndex).setPlayerPosition("None");
+            
+
+        }
+
+    }
+} 
+
 
     public void setIndexPosition(Boolean position) {
         this.position = position;
@@ -107,3 +155,4 @@ public class Map {
         }
     }
 }
+
