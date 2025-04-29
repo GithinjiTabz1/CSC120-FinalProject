@@ -1,13 +1,12 @@
 /**
  *
  */
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Nana_NutHouse extends PathPlaces{
     
-    public Nana_NutHouse(String name, int playerInput, ArrayList triviaQuestions) {
-        super (name, playerInput, triviaQuestions);
+    public Nana_NutHouse(String name, int playerInput) {
+        super (name, playerInput);
     }
 
     public int chocoBridgeNumber() {
