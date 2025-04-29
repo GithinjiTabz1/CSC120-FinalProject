@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class PeppermintForest extends PathPlaces{
@@ -31,7 +30,4 @@ public class PeppermintForest extends PathPlaces{
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
-        PeppermintForest pfTest = new PeppermintForest("PF", 234);
-        pfTest.printPathName();
     }

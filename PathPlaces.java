@@ -26,6 +26,7 @@ public PathPlaces(String name, int playerInput) {
     this.playerInput = playerInput;
     this.triviaQuestions = new ArrayList<>();
     this.random = new Random();
+    this.addString();
 }
 /**
  * printPathName will print the name of each subclass. 
@@ -42,7 +43,7 @@ public String getPathName() {
 /*
 * Random questions in an Array List
 */
-public void addString(String str) {
+public void addString() {
     this.triviaQuestions.add("What is the one secret to Nana's bizcocho recipe?");
     this.triviaQuestions.add("What is Queen Kandy's favorite color?");
     this.triviaQuestions.add("What animal does Queen Kandy dream of having in her Castle?");

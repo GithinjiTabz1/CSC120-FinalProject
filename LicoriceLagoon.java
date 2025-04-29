@@ -1,10 +1,9 @@
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class LicoriceLagoon extends PathPlaces{
 
-    public LicoriceLagoon(String name, int playerInput, ArrayList triviaQuestions) {
-        super (name, playerInput, triviaQuestions);
+    public LicoriceLagoon(String name, int playerInput) {
+        super (name, playerInput);
     }
     public void printPathName() {
             /*
@@ -16,7 +15,6 @@ public class LicoriceLagoon extends PathPlaces{
     
         Scanner scanner = new Scanner(System.in);
         int playerInput = scanner.nextInt();
-        System.out.println(triviaQuestions.size());
         String question = triviaQuestions.get(this.random.nextInt (triviaQuestions.size()));
         
         if (playerInput >= 2000 && playerInput <= 5000) {
@@ -24,6 +22,8 @@ public class LicoriceLagoon extends PathPlaces{
                 System.out.println("Aha! I see you have done your research! " + playerInput + " licorice make up the Lagoon. You can advance to the next tile.");
             } else {
                 System.out.println("Oh no! " + playerInput + " is not the correct number of licorice that make up the Lagoon. You must complete the following trivia question to move to the next tile." + question);
+                System.out.println(scanner.nextLine());
+                String response = scanner.nextLine();
                 
                 System.out.println("Well done! You have completed the challenge and may progress to the next tile.");
             }
@@ -34,7 +34,7 @@ public class LicoriceLagoon extends PathPlaces{
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        LicoriceLagoon llTest = new LicoriceLagoon("Licorice Lagoon", 2003, PathPlaces.triviaQuestions);
+        LicoriceLagoon llTest = new LicoriceLagoon("Licorice Lagoon", 2003);
         llTest.printPathName();
         }
     }
