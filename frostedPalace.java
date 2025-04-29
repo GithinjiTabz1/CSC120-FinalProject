@@ -65,7 +65,7 @@ public class FrostedPalace extends Castle {
                     if (firstAttempt) {
                         System.out.println("You guessed correctly on the first try! Teleporting you directly to King Kandy’s Castle...");
                         teleportedToKingKandy = true;
-                        this.currPosition = 60; 
+                        player.setPositionIndex(60);
                     } else {
                         System.out.println("You guessed correctly, but you must take the long way to reach King Kandy’s Castle.");
                         teleportedToKingKandy = false;

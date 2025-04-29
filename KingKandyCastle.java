@@ -30,12 +30,12 @@ public class KingKandyCastle extends Castle {
     public void attemptEntry() {
         if (hasKeyToKingKandy) {  // <<< use the local boolean here
             Scanner scanner = new Scanner(System.in);
-            System.out.println("\nYou have reached King Kandy's Castle!");
+            System.out.println("\n You have reached King Kandy's Castle!");
             System.out.print("Press Enter to step inside and claim your victory...");
             scanner.nextLine();
-            System.out.println("\nCongratulations! You have WON the game!");
+            System.out.println("\n Congratulations! You have WON the game!");
         } else {
-            System.out.println("\nYou cannot enter King Kandy's Castle yet! You need the final key!");
+            System.out.println("\n You cannot enter King Kandy's Castle yet! You need the final key!");
         }
     }
 }
