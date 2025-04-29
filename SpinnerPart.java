@@ -1,6 +1,4 @@
-import java.util.random;
 import java.util.ArrayList;
-import java.util.Random;
 
 
 public class SpinnerPart {
@@ -29,13 +27,7 @@ public class SpinnerPart {
         return Color;
     }
 
-    //add sections of candyland spinner onto my parts arraylist maybe in a method
 
-    // public ArrayList makeList(String Part){
-    //     Parts.add(Part);
-
-    //     return Parts;
-    // }
 
     public String getItem(){
         return Item;
@@ -48,22 +40,6 @@ public class SpinnerPart {
     
 }
 
-//player takes a turn spinning the spinner :
-//if they land on 1 of 2 oranges go to nearest orange
-//same logic for purples blues yellow, greens and reds
-
-//if it lands on the pepperminet : 
-//if it lands on the peanut thingy = // Nana’s NutHouse Class
-//if it lands on the lollypop  =  Lollipop Palace 
-//if it lands on the icecream
-
-//Map Class
-// Peppermint Forest Class
-// Licorice Lagoon
-// Castle Class - by inheritance 
-// Lollipop Palace 
-// Frosted Palace Class
-// Queen Kandy’s Castle Class 
 
 
 

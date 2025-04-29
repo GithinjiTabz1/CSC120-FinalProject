@@ -32,9 +32,10 @@ public void addParts(){
 // public void toString(){
 //     return "FullSpinner has a ";
 // }
+
 public String spin(){
     int Index = random.nextInt(parts.size());   //is it not recognizing random?
-    String  part = parts.get(Index).toString();
+    String  part = parts.get(Index).toString(); //can i not use somethig tat is part of a method in another class
     return part ;//the thing that 
     //how could i do this without a getOutput variable
     
