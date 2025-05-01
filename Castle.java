@@ -54,7 +54,7 @@ public class Castle {
      * Handles the logic for entering the castle.
      * Player can only enter if the castle is accessible and they are not already inside.
      */
-    public void enter() {
+    public static void enter() {
         if (isAccessible && !isInTheCastle) {
             isInTheCastle = true;
             System.out.println("You have entered the " + name + ".");

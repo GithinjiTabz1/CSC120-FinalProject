@@ -43,8 +43,9 @@ public class LollipopCastle extends Castle {
             } else {
                 if (height >= 200 && height <= 400) {
                     System.out.println("Perfect jump! You land safely on the other side.");
-                    player.setPositionIndex(45);
+                    player.setPositionIndex(52);
                     System.out.println("You are teleported to the Frosted Palace!");
+                    
                 } else if (height < 200) {
                     System.out.println("Too low! You fall into the caramel abyss... Taking the long route to the Frosted Palace.");
                 } else {
@@ -55,6 +56,7 @@ public class LollipopCastle extends Castle {
             System.out.println("Please enter a valid number.");
             scanner.next(); // Clear invalid input
         }
+
 
         // Regardless of success or failure, the player gets the key
         this.hasKeyToFrostedPalace = true;

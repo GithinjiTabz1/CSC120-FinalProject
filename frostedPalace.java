@@ -31,7 +31,7 @@ public class FrostedPalace extends Castle {
      * 
      * @param hasKeyFromLollipopCastle true if player has the key, false otherwise
      */
-    public void enter(boolean hasKeyFromLollipopCastle,Player player) {
+    public static void enter(boolean hasKeyFromLollipopCastle,Player player) {
         if (hasKeyFromLollipopCastle) {
             System.out.println("\nYou used the key to enter the Frosted Palace!");
             startChallenge(player);
@@ -61,7 +61,7 @@ public class FrostedPalace extends Castle {
      * If guessed correctly on the first try, player is teleported to King Kandy.
      * Otherwise, the player either gets the key after more trials or freezes to death.
      */
-    public void startChallenge(Player player) {
+    public static void startChallenge(Player player) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("\nWelcome to the Frosted Palace.");
         System.out.println("Guess the number between 1 and 10. It's freezing in here!");
