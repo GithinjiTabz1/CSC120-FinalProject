@@ -89,7 +89,7 @@ public class main {
 
             //moving our player using our spinner output 
             player.move(SpinnerOutput,map);
-            visitedSpecialLocations.add(part);
+            // visitedSpecialLocations.add(part);
 
             //displaying our players movements
             player.displayMotion(player, map.size());
