@@ -24,23 +24,23 @@ public class FrostedPalace extends Castle {
         this.hasKeyToKingKandy = false;
         this.teleportedToKingKandy = false;
     }
-
+    
     /**
      * Attempts to enter the Frosted Palace.
      * Only allows entry if the player has the key from Lollipop Castle.
      * 
      * @param hasKeyFromLollipopCastle true if player has the key, false otherwise
      */
-    public void enter(boolean hasKeyFromLollipopCastle) {
+    public void enter(boolean hasKeyFromLollipopCastle,Player player) {
         if (hasKeyFromLollipopCastle) {
             System.out.println("\nYou used the key to enter the Frosted Palace!");
-            startChallenge();
+            startChallenge(player);
         } else {
             System.out.println("\nYou cannot enter the Frosted Palace without the key from Lollipop Castle!");
         }
     }
 
-    /**
+     /**
      * Starts the freezing number-guessing challenge.
      * If guessed correctly on the first try, player is teleported to King Kandy.
      * Otherwise, the player either gets the key after more trials or freezes to death.
@@ -92,7 +92,7 @@ public class FrostedPalace extends Castle {
      * 
      * @return true if the player has the key, false otherwise
      */
-    public boolean hasKeyToKingKandy() {
+    public boolean hasKeyToKingKandy(Player player) {
         return hasKeyToKingKandy;
     }
 

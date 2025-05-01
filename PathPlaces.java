@@ -14,6 +14,8 @@ public class PathPlaces {
     protected boolean triviaAcceptance;
     protected int playerInput;
     protected ArrayList<String> triviaQuestions;
+    protected Random random = new Random();
+
 
     public PathPlaces(String name, int playerInput) {
         this.name = name;

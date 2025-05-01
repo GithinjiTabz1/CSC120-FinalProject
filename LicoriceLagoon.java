@@ -34,4 +34,4 @@ public class LicoriceLagoon extends PathPlaces{
     }
     public void finalSentiment() {
         System.out.println("That's right! You have completed the challenge and may progress to the next tile.");
-        }
+        }}

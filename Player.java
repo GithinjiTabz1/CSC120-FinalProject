@@ -7,8 +7,8 @@ public class Player {
     private int positionIndex;
     private String currPosition;
     private Boolean isAlive;
-    private ArrayList<SpinnerPart> tiles; //only added so i could test my move method , this arraylist should be declared within maybe a tile class or within the map class
-
+    private Boolean hasFrostedKey = false;
+    private ArrayList <String> tiles;
 
 
     public Player(String name,int position){
@@ -44,6 +44,14 @@ public class Player {
         this.positionIndex=positionIndex;//setter cause this is the only one we need to manipulate
     }
     //have a move method - while loop
+
+    public Boolean getHasFrostedKey(){
+        return hasFrostedKey ;
+    }
+
+    public void setHasFrostedKey(Boolean hasFrostedKey) {
+        this.hasFrostedKey = hasFrostedKey;
+    }
     
 
 
@@ -83,6 +91,10 @@ public class Player {
         System.out.println(tiles.toString());
 
     }
+
+    public Boolean setHasWon(boolean b) {
+        return b;
+        }
    
 
 

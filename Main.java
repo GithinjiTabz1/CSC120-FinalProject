@@ -117,24 +117,21 @@ public class Main {
 
             }
 
-             else if (player.getPositionIndex() == 22 || currPosition.equals("Peanut") ) {//|| !visitedLocations.contains("Peanut")
+             else if (player.getPositionIndex() == 22 || currPosition.equals("Peanut") ) {
+              if(!visitedLocations.contains("Peanut")){
              
-             System.out.println("You are now standing infront of Nana's Nuthouse! Press any number to come in...if you dare!");
-              int playerInput = scanner.nextInt();
-              System.out.println("i am breaking on the first line");
-              Nana_NutHouse nana = new Nana_NutHouse("Nana's Nuthouse",playerInput);
-              System.out.println("i'm breaking on line 2");
-              scanner.nextLine();
-              System.out.println("i'm breaking on line 3");
-              nana.chocoBridgeNumber();
-              System.out.println("i'm breaking on the last line");
-
-              }
+                System.out.println("You are now standing infront of Nana's Nuthouse! Press any number to come in...if you dare!");
+                  int playerInput = scanner.nextInt();
+                  Nana_NutHouse nana = new Nana_NutHouse("Nana's Nuthouse",playerInput);
+                  scanner.nextLine();
+                  nana.chocoBridgeNumber();
+              }}
     //          //nana.enter(player);
 
              
              else if (player.getPositionIndex() ==  37 || currPosition.equals("Licorice") ) {
-               // || !visitedLocations.contains("Licorice")
+               // || 
+               if(!visitedLocations.contains("Licorice")){
               System.out.println("You have stumbled upon the sticky.....Licorice Lagoon. Press any number to waddle in !");
               System.out.println("i'm breaking on line 2");
               int playerInput = scanner.nextInt();
@@ -143,12 +140,13 @@ public class Main {
               LicoriceLagoon lagoon = new LicoriceLagoon("Licorice Lagoon",playerInput);
               lagoon.printPathName();
               scanner.nextLine();
-              lagoon.finalSentiment();}
+              lagoon.finalSentiment();}}
 
     //             lagoon.enter(player);
             
 
              else if (player.getPositionIndex() == 47 || currPosition.equals("Lollipop")) {
+               if(!visitedLocations.contains("Lollipop")){
                 System.out.println("You made it to Lollipop Castle! Behold the glory !!!!!!!!!");
                 int playerInput = scanner.nextInt();
                 LollipopCastle lollipop = new LollipopCastle();
@@ -156,33 +154,37 @@ public class Main {
                 lollipop.startChallenge(hasKey,player);
                 scanner.nextLine();
 
-                
+               }
                 }
             else if (player.getPositionIndex() == 52 || currPosition.equals("IceCream")) {
-                System.out.println("You’ve reached the Frosted Palace.");
-                int playerInput = scanner.nextInt();
-                FrostedPalace frosted = new FrostedPalace();
-                frosted.startChallenge(player);
-                scanner.nextLine();
-            }
-    //              {
-    //                 System.out.println("\n You’ve arrived at King Kandy’s Castle!");
-    //                 System.out.println(" YOU WIN! Sweet victory is yours!");
-    //                 player.setHasWon(true);
-    //             } else {
-    //                 System.out.println("\n You reached the castle, but you don't have the final key! Find the Frosted Palace first.");
-    //             }
-    //         } else {
-    //             System.out.println("Nothing special here. Keep moving!");
-    //         }
+                if(!visitedLocations.contains("IceCream")){
+                  System.out.println("You’ve reached the Frosted Palace.");
+                  int playerInput = scanner.nextInt();
+                  FrostedPalace frosted = new FrostedPalace();
+                  frosted.startChallenge(player);
+                  scanner.nextLine();
+            }}
 
-    //         // Check if the player has died
-    //         if (!player.isAlive()) {
-    //             System.out.println("\nOh no! You didn’t survive the journey. Game Over.");
-    //         }
+            // End of Game
+            if (player.getPositionIndex() ==60 )
+              {  if (player.getHasFrostedKey()){
+                    System.out.println("\n You’ve arrived at King Kandy’s Castle!");
+                    System.out.println(" YOU WIN! Sweet victory is yours!");
+                    player.setHasWon(true);
+                } else {
+                    System.out.println("\n You reached the castle, but you don't have the final key! Find the Frosted Palace first.");
+                }}
+            else {
+                System.out.println("Nothing special here. Keep moving!");
+            }
+
+            // Check if the player has died
+            if (!player.getIsAlive()) {
+                System.out.println("\nOh no! You didn’t survive the journey. Game Over.");
+            }
         }
 
       scanner.close();
-      
+
     }
 }
