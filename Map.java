@@ -1,6 +1,3 @@
-import java.util.ArrayList;
-
-import java.util.ArrayList;
 
 public class Map {
     private Boolean position ;
@@ -22,13 +19,6 @@ public class Map {
     /*
      * Index of each block of the map.
      */
-    public Map(Boolean position, String colorBlocks, String playerPosition){
-        this.position = position;
-        this.colorBlocks = colorBlocks;
-        this.playerPosition = playerPosition;
-
-    }
-
     public Boolean indexPosition(){
         return this.position;
     }

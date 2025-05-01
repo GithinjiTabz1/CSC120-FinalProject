@@ -1,5 +1,4 @@
 
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -7,7 +6,7 @@ import java.util.Scanner;
  * Main class that runs the Candy Land game.
  * Guides the player through spinning, moving, and entering special locations.
  */
-public class Main {
+public class main {
     public static void main(String[] args) {
       //scanner
         Scanner scanner = new Scanner(System.in);

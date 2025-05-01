@@ -34,4 +34,11 @@ public class LicoriceLagoon extends PathPlaces{
     }
     public void finalSentiment() {
         System.out.println("That's right! You have completed the challenge and may progress to the next tile.");
-        }}
+        }
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        LicoriceLagoon llTest = new LicoriceLagoon("Licorice Lagoon", 2003);
+        llTest.printPathName();
+        }
+    }
