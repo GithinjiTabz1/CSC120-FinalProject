@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 
+import java.util.ArrayList;
+
 public class Map {
     private Boolean position ;
     private String colorBlocks;
@@ -14,16 +16,34 @@ public class Map {
         this.position = position;
         this.colorBlocks = colorBlocks;
         this.playerPosition = playerPosition;
+    }
+
+
+    /*
+     * Index of each block of the map.
+     */
+    public Map(Boolean position, String colorBlocks, String playerPosition){
+        this.position = position;
+        this.colorBlocks = colorBlocks;
+        this.playerPosition = playerPosition;
 
     }
 
     public Boolean indexPosition(){
         return this.position;
     }
+ 
+    /*
+     * Tiles of the map.
+     */
 
     public String gameBlocks(){
         return this.colorBlocks;
     }
+ 
+    /*
+     * Name of the tile (color and index) which the player is in.
+     */
 
     public String playerPosition(){
         return this.playerPosition;
