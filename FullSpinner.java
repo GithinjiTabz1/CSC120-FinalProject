@@ -2,11 +2,18 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class FullSpinner {
-    private ArrayList<SpinnerPart> parts;
+    private  ArrayList<SpinnerPart> parts;
+    private String part;
+    private Random random;
 
     public  FullSpinner(){
         this.parts = new ArrayList<>();
+        this.random = new Random();
     }
+
+
+
+
 
 
 public void addParts(){
@@ -19,10 +26,12 @@ public void addParts(){
 
     //adding my  candies
 
-    parts.add(new SpinnerPart("Ice cream")); 
-    parts.add(new SpinnerPart("Peanut"));
-    parts.add(new SpinnerPart("Lollipop")); 
+    parts.add(new SpinnerPart("Peppermint")); 
+    parts.add(new SpinnerPart("Icecream"));
     parts.add(new SpinnerPart("Licorice")); 
+    parts.add(new SpinnerPart("Lollipop")); 
+    parts.add(new SpinnerPart("Peanut")); 
+
 
 
 }
@@ -33,10 +42,22 @@ public void addParts(){
 //     return "FullSpinner has a ";
 // }
 
-public String spin(){
-    int Index = random.nextInt(parts.size());   //is it not recognizing random?
-    String  part = parts.get(Index).toString(); //can i not use somethig tat is part of a method in another class
-    return part ;//the thing that 
+@Override
+public String toString(){
+    return "Congratulations ! You have spun a " + this.part+ " You can now advance ahead to the "+ this.part+ " tile.";
+}
+
+
+
+public SpinnerPart spin(){
+    int index = random.nextInt(parts.size());
+    SpinnerPart SpinnerOutput = parts.get(index);
+
+    this.part = SpinnerOutput.getColor();
+    //System.out.println(part);
+    return SpinnerOutput;
+    
+    //the thing that 
     //how could i do this without a getOutput variable
     
     
@@ -44,11 +65,18 @@ public String spin(){
     //and then just get it to spit out that index
 
 
-}
-public static void main(String[] args) {
-    FullSpinner spinner = new FullSpinner();
-    spinner.addParts();
-    System.out.println(spinner);
-}
 
 }
+
+
+
+
+}
+
+
+//pepperminet forest = 15
+//nana's nuthouse = 22
+//licorice lagon = 37
+//lollipop castle = 47
+//frosted palace = 52
+//king kandy' castle 

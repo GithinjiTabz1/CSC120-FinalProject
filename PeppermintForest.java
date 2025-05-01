@@ -2,8 +2,8 @@ import java.util.Scanner;
 
 public class PeppermintForest extends PathPlaces{
     
-    public PeppermintForest(String name, boolean triviaAcceptance, int playerInput) {
-        super(name, triviaAcceptance, playerInput);
+    public PeppermintForest(String name, int playerInput) {
+        super(name, playerInput);
     }
 
     public void printPathName() {
@@ -11,10 +11,13 @@ public class PeppermintForest extends PathPlaces{
     
         Scanner scanner = new Scanner(System.in);
         int playerInput = scanner.nextInt();
-
+/*
+* If trivia questions wrongly answered then player loses and therefore proceeds through the long way and does not get directly relocated to were the catsles are.
+* If correctly answered then player gets relocated to the first castle.
+*/
         if (playerInput >= 1 && playerInput <= 10000) {
             if (playerInput % 2 != 0) {
-                System.out.println("Way to go! Exactly " + playerInput + " peppermint candy canes make up the Peppermint Forest! You can advance to the next block. Remember to grab a candy cane on your way out.");
+                System.out.println("Way to go! Exactly " + playerInput + " peppermint candy canes make up the Peppermint Forest! You can advance to the next tile. Remember to grab a candy cane on your way out.");
             } else {
                 System.out.println("Unfortunately " + playerInput + " is not the correct amount of peppermint candy canes that make up the Peppermint Forest. You can continue on your path, but you may not take a peppermint candy cane. Good luck!");
             }
@@ -23,11 +26,4 @@ public class PeppermintForest extends PathPlaces{
             }
         }
 
-    }
-
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
-        //PeppermintForest pfTest = new PeppermintForest("Peppermint Forest", true, 4238);
-        //pfTest.printPathName();
     }

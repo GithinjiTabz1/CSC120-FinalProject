@@ -11,7 +11,7 @@ public class Player {
 
 
 
-    public Player(String name,String color, String shape,int position){
+    public Player(String name,int position){
         this.name = name ;
         this.currPosition = "red";//if we have all the points on the map that the player can be at set up as an arraylist then im setting this to 0 as statring position
         this.positionIndex = 0;
@@ -19,12 +19,16 @@ public class Player {
         this.tiles = new ArrayList<>();
     }
 
-    public String enterName(){
+    public static String enterName(){
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter your name:");
+        System.out.println("Hello Player ! Enter your name:");
         String name = sc.nextLine();
         return name;
 
+    }
+
+    public Boolean getIsAlive(){
+        return isAlive;
     }
 
     
@@ -47,16 +51,37 @@ public class Player {
         return currPosition;
     }
 
-    public void move(String SpinnerPart, ArrayList<String> tiles){
+    public String move(SpinnerPart SpinnerOutput, ArrayList<Map> tiles){
         this.positionIndex+=1; 
        if (this.positionIndex >= tiles.size()) {
         this.positionIndex = tiles.size() - 1;
     }
 
-        while(this.positionIndex < tiles.size() && !tiles.get(this.positionIndex).equals(SpinnerPart)){//this just checks if the color of the tile tjat we are on is the same as the out put of our spinner and if it isn't, then the player keeps moving one tile forward
+        while(this.positionIndex < tiles.size() && !!tiles.get(this.positionIndex).equals(SpinnerOutput)){//this just checks if the color of the tile tjat we are on is the same as the out put of our spinner and if it isn't, then the player keeps moving one tile forward
             this.positionIndex+=1;
         } 
-        this.currPosition = SpinnerPart;  
+        this.currPosition = SpinnerOutput.getColor();  
+        System.out.println("You have now moved to " +currPosition );
+        return currPosition;
+    }
+
+    public static void displayMotion(Player player, int boardSize){
+        StringBuilder tiles = new StringBuilder ("Start journey");
+
+        for(int i = 0; i < boardSize; i++){
+            if(i == player.getPositionIndex())
+            
+            {
+                tiles.append("|").append(player.getName().charAt(0)).append("|");//i will edit this later to make it so that it displays the first letter of the person's name
+
+            }else{
+                tiles.append("|_|");
+            }
+  
+
+        }
+        System.out.println(tiles.toString());
+
     }
    
 

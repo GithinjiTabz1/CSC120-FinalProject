@@ -18,10 +18,7 @@ public class SpinnerPart {
     public SpinnerPart(String Color) {
     this.Color = Color;
 }
-    public SpinnerPart(String Color, String Item) {
-        this.Color = Color;
-        this.Item = Item;
-    }
+
 
     public String getColor(){
         return Color;
