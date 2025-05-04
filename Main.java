@@ -82,6 +82,7 @@ public class main {
 
             String part = SpinnerOutput.getColor();
             
+            
 
 
 
@@ -89,6 +90,7 @@ public class main {
 
             //moving our player using our spinner output 
             player.move(SpinnerOutput,map);
+            spinner.removeVisitedCandies(part);
             // visitedSpecialLocations.add(part);
 
             //displaying our players movements
@@ -130,7 +132,7 @@ public class main {
                   int playerInput = scanner.nextInt();
                   Nana_NutHouse nana = new Nana_NutHouse("Nana's Nuthouse",playerInput);
                   scanner.nextLine();
-                  nana.chocoBridgeNumber();
+                  nana.chocoBridgeNumber(player);
               
             }
             // }
@@ -148,7 +150,9 @@ public class main {
               LicoriceLagoon lagoon = new LicoriceLagoon("Licorice Lagoon",playerInput);
               lagoon.printPathName();
               scanner.nextLine();
-              lagoon.finalSentiment();}
+              lagoon.startChallenge();
+              // lagoon.finalSentiment();
+              }
 
     //             lagoon.enter(player);
             
@@ -164,7 +168,7 @@ public class main {
 
                
                 }
-            else if (player.getPositionIndex() == 52 || currPosition.equals("IceCream")) {
+            else if (player.getPositionIndex() == 52 || currPosition.equals("Icecream")) {
                 // if(!visitedLocations.contains("IceCream")){
                   System.out.println("You’ve reached the Frosted Palace.");
                   int playerInput = scanner.nextInt();

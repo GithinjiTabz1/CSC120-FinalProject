@@ -8,10 +8,10 @@ import java.util.Scanner;
  */
 public class FrostedPalace extends Castle {
 
-    private int correctNumber;
-    private int temperature;
-    private boolean hasKeyToKingKandy;
-    private boolean teleportedToKingKandy;
+    private static int correctNumber;
+    private static int temperature;
+    private static boolean hasKeyToKingKandy;
+    private static boolean teleportedToKingKandy;
 
     /**
      * Constructs a new Frosted Palace.
@@ -76,7 +76,7 @@ public class FrostedPalace extends Castle {
                 if (guess == correctNumber) {
                     System.out.println("Correct! You survived and earned the key to King Kandy’s Castle!");
                     hasKeyToKingKandy = true;
-                    this.isAccessible = true;
+                    FrostedPalace.isAccessible = true;
 
                     if (firstAttempt) {
                         System.out.println("You guessed correctly on the first try! Teleporting you directly to King Kandy’s Castle...");
@@ -92,7 +92,8 @@ public class FrostedPalace extends Castle {
                     System.out.println("Incorrect! Your body temperature is now: " + temperature + "°F");
                     if (checkFrozen()) {
                         System.out.println("You froze to death in the Frosted Palace...");
-                        break;
+                        player.setIsAlive(false); 
+                        return;
                     }
                 }
                 firstAttempt = false;
@@ -126,7 +127,7 @@ public class FrostedPalace extends Castle {
      * 
      * @return true if frozen, false otherwise
      */
-    private boolean checkFrozen() {
+    public static boolean checkFrozen() {
         return temperature <= 0;
     }
 

@@ -33,28 +33,36 @@ public class LollipopCastle extends Castle {
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to Lollipop Castle!");
-        System.out.println("Jump too low = caramel abyss. Jump too high = sucked into space.");
+      //  System.out.println("Jump too low = caramel abyss. Jump too high = sucked into space.");
 
-        System.out.print("Enter your jump height (100–500): ");
-        if (scanner.hasNextDouble()) {
-            height = scanner.nextDouble();
-            if (height < 100 || height > 500) {
-                System.out.println("Invalid jump height. Must be between 100 and 500.");
-            } else {
-                if (height >= 200 && height <= 400) {
-                    System.out.println("Perfect jump! You land safely on the other side.");
-                    player.setPositionIndex(52);
-                    System.out.println("You are teleported to the Frosted Palace!");
-                    
-                } else if (height < 200) {
-                    System.out.println("Too low! You fall into the caramel abyss... Taking the long route to the Frosted Palace.");
+        boolean validJump = false;
+
+        while (!validJump) {
+            System.out.print("Enter your jump height (100–500): ");
+    
+            if (scanner.hasNextDouble()) {
+                height = scanner.nextDouble();
+                scanner.nextLine(); // consume leftover newline
+    
+                if (height < 100 || height > 500) {
+                    System.out.println("Invalid jump height. Must be between 100 and 500. Try again.");
                 } else {
-                    System.out.println("Too high! You’re sucked into the void of space... Taking the long route to the Frosted Palace.");
+                    validJump = true; // exit the loop
+    
+                    if (height >= 200 && height <= 400) {
+                        System.out.println("Perfect jump! You land safely on the other side.");
+                        player.setPositionIndex(52);
+                        System.out.println("You are teleported to the Frosted Palace!");
+                    } else if (height < 200) {
+                        System.out.println("Too low! You fall into the caramel abyss... Taking the long route to the Frosted Palace.");
+                    } else {
+                        System.out.println("Too high! You’re sucked into the void of space... Taking the long route to the Frosted Palace.");
+                    }
                 }
+            } else {
+                System.out.println("Please enter a valid number.");
+                scanner.next(); // Clear invalid input
             }
-        } else {
-            System.out.println("Please enter a valid number.");
-            scanner.next(); // Clear invalid input
         }
 
 

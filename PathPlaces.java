@@ -16,37 +16,42 @@ public class PathPlaces {
     protected int playerInput;
     protected ArrayList<String> triviaQuestions;
     protected Random random;
-/**
- * The following constructor includes these paramenters:
- * @param name
- * @param playerInput
- */
-public PathPlaces(String name, int playerInput) {
-    this.name = name;
-    this.playerInput = playerInput;
-    this.triviaQuestions = new ArrayList<>();
-    this.random = new Random();
-    this.addString();
-}
+    protected Boolean hasKey = false;
+
+
+    /**
+     * The following constructor includes these paramenters:
+     * @param name
+     * @param playerInput
+     */
+    public PathPlaces(String name, int playerInput) {
+        this.name = name;
+        this.playerInput = playerInput;
+        this.triviaQuestions = new ArrayList<>();
+        this.random = new Random();
+        this.addString();
+    }
 /**
  * printPathName will print the name of each subclass. 
  * getPathName obtains the name of the subclass. 
  * addString are the questions stored in the array list triviaQuestions. Initially a hashtable was going to be used, but for simplicity purposes an array list seemed to work better at this time.
  */
-public void printPathName() {
-    System.out.println("Welcome to " + this.name + "!");
-}
+    public void printPathName() {
+        System.out.println("Welcome to " + this.name + "!");
+    }
 
-public String getPathName() {
-    return this.name;
-}
+
+
+    public String getPathName() {
+        return this.name;
+    }
 /*
 * Random questions in an Array List
 */
-public void addString() {
-    this.triviaQuestions.add("What is the one secret to Nana's bizcocho recipe?");
-    this.triviaQuestions.add("What is Queen Kandy's favorite color?");
-    this.triviaQuestions.add("What animal does Queen Kandy dream of having in her Castle?");
+protected void addString()  {
+    triviaQuestions.add("What is the one secret to Nana's bizcocho recipe?");
+    triviaQuestions.add("What is Queen Kandy's favorite color?");
+    triviaQuestions.add("What animal does Queen Kandy dream of having in her Castle?");
 }
 /**
  * Main Method

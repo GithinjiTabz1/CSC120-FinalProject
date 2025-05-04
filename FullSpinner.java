@@ -35,6 +35,11 @@ public void addParts(){
 
 
 }
+
+public void removeVisitedCandies(String partName) {
+    parts.removeIf(p -> p.getColor().equals(partName));
+}
+
 //i'll need to add an override method to a to string
 
 // @Override
