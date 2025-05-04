@@ -21,7 +21,7 @@ public class Nana_NutHouse extends PathPlaces{
 
         if (playerInput % 2 != 0) {
             System.out.println("Congratulations! Your magic number " + playerInput + " has unlocked the chocolate bridge. You advance to Licorice Lagoon!");
-            player.setPositionIndex(37);//why isn't this working
+            player.setPositionIndex(37);
 
         } else {
             System.out.println("Oh no! Your number " + playerInput + " has broken the chocolate bridge! You will have to take the long way after you answer this trivia question. " + question);
@@ -29,6 +29,8 @@ public class Nana_NutHouse extends PathPlaces{
             String response = scanner.nextLine();
         }
         return playerInput;
+        
+
     }
     public void finalSentiment() {
         System.out.println("That's right! You have completed the challenge and may progress to the next tile.");

@@ -54,9 +54,11 @@ public class LollipopCastle extends Castle {
                         player.setPositionIndex(52);
                         System.out.println("You are teleported to the Frosted Palace!");
                     } else if (height < 200) {
-                        System.out.println("Too low! You fall into the caramel abyss... Taking the long route to the Frosted Palace.");
+                        System.out.println("Too low! You fall into the caramel abyss.......and fell to your death ! ");
+                        player.setIsAlive(false);
                     } else {
-                        System.out.println("Too high! You’re sucked into the void of space... Taking the long route to the Frosted Palace.");
+                        System.out.println("Too high! You’re sucked into the void of space... You unfortunately did not make it back");
+                        player.setIsAlive(false);
                     }
                 }
             } else {

@@ -3,7 +3,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class PeppermintForest extends PathPlaces{
-     private String name;
+    private String name;
     private int playerInput;
     private ArrayList<String> triviaQuestions;
     private  boolean hasKey = false;

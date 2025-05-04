@@ -12,10 +12,6 @@ public class FullSpinner {
     }
 
 
-
-
-
-
 public void addParts(){
     parts.add(new SpinnerPart("Red"));
     parts.add(new SpinnerPart("Purple"));
@@ -55,6 +51,10 @@ public String toString(){
 
 
 public SpinnerPart spin(){
+    if (parts.isEmpty()) {
+        throw new IllegalStateException("The spinner parts list is empty! Please add parts before spinning.");
+    }
+
     int index = random.nextInt(parts.size());
     SpinnerPart SpinnerOutput = parts.get(index);
 

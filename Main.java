@@ -9,6 +9,7 @@ import java.util.Set;
  * Guides the player through spinning, moving, and entering special locations.
  */
 public class main {
+
     public static void main(String[] args) {
       //scanner
         Scanner scanner = new Scanner(System.in);
@@ -81,12 +82,9 @@ public class main {
             SpinnerPart SpinnerOutput = spinner.spin();
 
             String part = SpinnerOutput.getColor();
-            
-            
-
-
-
+      
             System.out.println(spinner);
+            boolean advancedFromNana = false;
 
             //moving our player using our spinner output 
             player.move(SpinnerOutput,map);
@@ -118,6 +116,7 @@ public class main {
                 PeppermintForest peppermint = new PeppermintForest("Peppermint Forest",playerInput);
                 scanner.nextLine();
                 peppermint.printPathName(); 
+                PeppermintForest.startChallenge();
             }      
 
                 
@@ -132,7 +131,18 @@ public class main {
                   int playerInput = scanner.nextInt();
                   Nana_NutHouse nana = new Nana_NutHouse("Nana's Nuthouse",playerInput);
                   scanner.nextLine();
-                  nana.chocoBridgeNumber(player);
+                  int result = nana.chocoBridgeNumber(player);
+
+                  if (player.getPositionIndex() == 37) {
+                    System.out.println("Teleporting you to Licorice Lagoon...");
+                    System.out.println("You have stumbled upon the sticky.....Licorice Lagoon. Press any number to waddle in !");
+                    playerInput = scanner.nextInt();
+                    LicoriceLagoon lagoon = new LicoriceLagoon("Licorice Lagoon", playerInput);
+                    lagoon.printPathName();
+                    scanner.nextLine();
+                    lagoon.startChallenge();
+                  }
+                      
               
             }
             // }
@@ -162,9 +172,17 @@ public class main {
                 System.out.println("You made it to Lollipop Castle! Behold the glory !!!!!!!!!");
                 int playerInput = scanner.nextInt();
                 LollipopCastle lollipop = new LollipopCastle();
-                Boolean hasKey = true; //should i have it as false - because in this logic the person is already inside and I'm super unclear on if they are inside - then do they already have the key and if so where di dthey pick up the key?
+                Boolean hasKey = true; 
                 lollipop.startChallenge(hasKey,player);
                 scanner.nextLine();
+
+                if (player.getPositionIndex() == 52) {
+                  System.out.println("You’ve reached the Frosted Palace.");
+                  int palaceInput = scanner.nextInt();
+                  FrostedPalace frosted = new FrostedPalace();
+                  frosted.startChallenge(player);
+                  scanner.nextLine();
+}
 
                
                 }
