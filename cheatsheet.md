@@ -6,3 +6,4 @@ Note:  It's a good idea to also make this list available inside the game, in res
 # SPOILER ALERT
 
 If your game includes challenges that must be overcome to win, also list them below.
+1. Peppermint Forest Challenge #1: Guess a number between 1 and 10,000. If the number is odd, player may take a candy cane and proceed. If the number is even, player continues without a candy cane. 
