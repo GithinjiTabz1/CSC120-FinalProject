@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -122,19 +124,27 @@ public class Player {
      * @return the name of the tile the player landed on
      */
     public String move(SpinnerPart SpinnerOutput, ArrayList<Map> tiles) {
-        this.positionIndex += 1;
 
-        if (this.positionIndex >= tiles.size()) {
-            this.positionIndex = tiles.size() - 1;
-        }
 
-        while (this.positionIndex < tiles.size() &&
-               !tiles.get(this.positionIndex).equals(SpinnerOutput)) {
+
+        while(this.positionIndex < tiles.size()&&!tiles.get(this.positionIndex).getColor().equals(SpinnerOutput.getColor())) {
             this.positionIndex += 1;
         }
 
+                
+        if (this.positionIndex >= tiles.size()) {
+            this.positionIndex = tiles.size() - 1;
+        }
+       
+
+
+        // while (this.positionIndex < tiles.size() &&
+        //        !tiles.get(this.positionIndex).equals(SpinnerOutput)) {
+        //     this.positionIndex += 1;
+        // }
+
         this.currPosition = SpinnerOutput.getColor();
-        System.out.println("You have now moved to " + currPosition);
+        System.out.println("You have now advanced to the " + currPosition +" tile");
         return currPosition;
     }
 
@@ -144,19 +154,64 @@ public class Player {
      * @param player    the player whose position is displayed
      * @param boardSize the total size of the board
      */
-    public static void displayMotion(Player player, int boardSize) {
-        StringBuilder tiles = new StringBuilder("Start journey");
 
-        for (int i = 0; i < boardSize; i++) {
+    public static void displayMotion(Player player, ArrayList<Map> board) {
+        System.out.println("\n~~~ Map ~~~");
+        
+        StringBuilder display = new StringBuilder();
+
+        for (int i = 0; i < board.size(); i++) {
+            Map tile = board.get(i);
+            
+
+            String special = tile.getPlayerPosition();
+            String symbol = "";
+
             if (i == player.getPositionIndex()) {
-                tiles.append("|").append(player.getName().charAt(0)).append("|");
+                // Show player's initial
+                symbol = "|~~" + player.getName().charAt(0) + "~~||";
+
+
+
+            } else if (!tile.getPlayerPosition().equals("None")) {
+
+
+                // Use emojis or symbols for special locations
+                switch (tile.getPlayerPosition()) {
+                    case "Peppermint.":
+                        symbol = "|P|"; 
+                        break;
+                    case "Nana's Nuthouse":
+                        symbol = "|🥜|"; 
+                        break;
+                    case "Licorice Lagoon":
+                        symbol = "|🍬|"; 
+                        break;
+                    case "Lollipop Castle":
+                        symbol = "|🏰|"; 
+                        break;
+                    case "Frosted Palace":
+                        symbol = "|❄️|"; 
+                        break;
+                }
             } else {
-                tiles.append("|_|");
+                // Show tile color's first letter
+                symbol = "|_" + tile.getColor().charAt(0) + "_|";
+                
+            }
+             display.append(symbol);
+            
+
+            if ((i + 1) % 10 == 0) {
+                display.append("\n");
             }
         }
 
-        System.out.println(tiles.toString());
-    }
+    System.out.println(display.toString());
+}
+
+
+
 
     /**
      * Placeholder method to set whether the player has won.
@@ -168,6 +223,9 @@ public class Player {
     public Boolean setHasWon(boolean b) {
         return b;
     }
-}
 
+    void setCurrPosition(String color) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+}
 

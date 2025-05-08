@@ -7,6 +7,7 @@
 public class SpinnerPart {
     private String Item;
     private String Color;
+    
 
     /**
      * Constructs a SpinnerPart with a specified color or name.
@@ -35,7 +36,14 @@ public class SpinnerPart {
     public String getItem() {
         return Item;
     }
+
+
 }
+
+
+
+
+
 
 
 

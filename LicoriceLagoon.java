@@ -44,7 +44,7 @@ public class LicoriceLagoon extends PathPlaces{
         } else { 
             System.out.println("Please enter a number between 2000 and 5000.");
             }
-        System.out.println("Yay! You got the key to Lollipop Castle"); 
+        System.out.println("Yay! You also just acquired the key to Lollipop Castle. Keeping it in your inventory for now."); 
         return hasKeyToLollipop;
 
     }

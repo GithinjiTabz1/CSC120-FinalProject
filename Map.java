@@ -35,7 +35,7 @@ public class Map {
      * Name of the tile (color and index) which the player is in.
      */
 
-    public String playerPosition(){
+    public String getPlayerPosition(){
         return this.playerPosition;
     }
 
@@ -51,6 +51,14 @@ public class Map {
         this.position = position;
     }
 
-}
+    public String getColor() {
+        return this.colorBlocks;
+    }
 
+    public String getLocation() {
+        return this.playerPosition;
+    }
+
+
+}
 

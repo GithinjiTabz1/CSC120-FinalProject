@@ -66,6 +66,7 @@ public class main {
 
         String name = Player.enterName();
         Player player = new Player(name,0);    
+        // System.out.println(map.getLocation());
     
         //starting display
 
@@ -76,15 +77,17 @@ public class main {
       //  Main game loop
         while (player.getIsAlive()) {
             System.out.println("\n Spin the wheel to move forward!");
-            System.out.print("Press Enter to spin...");
+            System.out.print("Press Enter to spin the wheel...");
 
             scanner.nextLine();
             SpinnerPart SpinnerOutput = spinner.spin();
-
             String part = SpinnerOutput.getColor();
       
             System.out.println(spinner);
-            boolean advancedFromNana = false;
+            // boolean advancedFromNana = false;
+
+            System.out.println("Congratulations! You have spun a " + SpinnerOutput.getColor() + ". You can now advance ahead to the " + SpinnerOutput.getColor() + " tile.");
+
 
             //moving our player using our spinner output 
             player.move(SpinnerOutput,map);
@@ -92,7 +95,8 @@ public class main {
             // visitedSpecialLocations.add(part);
 
             //displaying our players movements
-            player.displayMotion(player, map.size());
+            Player.displayMotion(player, map);
+          
 
             //System.out.println(currentPosition);
             
@@ -111,7 +115,7 @@ public class main {
             if (player.getPositionIndex() == 15 || currPosition.equals("Peppermint"))   { // i tried to add & !visitedLocations.contains("Peppermint") so that people wouldnt keep visiting the peppermint forest but it kept causing an issue where it just would not go into the condition if I did an nad which makes sense and if I did an or it would just go into the condition even if I didnt spin peppermint should I consider a nested condition
             // if( !visitedLocations.contains("Peppermint")){
 
-                System.out.println("You are standing in front of the .....PepperMint Forest . Click any number to enter ");
+                System.out.println("Suddenly, you are surrounded by the sweet,cool,minty aroma of peppermint . Before your very eyes immense red and white pinstriped trees sprout from the floor and surround you. You are now in ......the Peppermint forest.To wander deeper in, enter any number.");
                 int playerInput = scanner.nextInt(); //should I try abstraction or something so that the player can click any key ? - not a necessity
                 PeppermintForest peppermint = new PeppermintForest("Peppermint Forest",playerInput);
                 scanner.nextLine();
@@ -120,22 +124,20 @@ public class main {
             }      
 
                 
-               // peppermint.enter(player);
-
-            // }
 
              else if (player.getPositionIndex() == 22 || currPosition.equals("Peanut") ) {
               // if(!visitedLocations.contains("Peanut")){
              
-                System.out.println("You are now standing infront of Nana's Nuthouse! Press any number to come in...if you dare!");
+                System.out.println("Awww nuts!!!You find yourself infront of the delicious...yet very dangerous Nana's nuthouse. To advance, press any number to come in !");
                   int playerInput = scanner.nextInt();
-                  Nana_NutHouse nana = new Nana_NutHouse("Nana's Nuthouse",playerInput);
+                  NanaNutHouse nana = new NanaNutHouse("Nana's Nuthouse",playerInput);
                   scanner.nextLine();
-                  int result = nana.chocoBridgeNumber(player);
 
-                  if (player.getPositionIndex() == 37) {
+                  boolean crossedBridge = nana.chocoBridgeNumber(player, scanner);
+
+                  if (crossedBridge) {
                     System.out.println("Teleporting you to Licorice Lagoon...");
-                    System.out.println("You have stumbled upon the sticky.....Licorice Lagoon. Press any number to waddle in !");
+                    System.out.println("It's sticky ! It's sweet ! And it has gotten up to your knees! You have stumbled into the sticky.....Licorice Lagoon. Waddle in! Discover more! And to do so , just enter your favorite number here!");
                     playerInput = scanner.nextInt();
                     LicoriceLagoon lagoon = new LicoriceLagoon("Licorice Lagoon", playerInput);
                     lagoon.printPathName();
@@ -145,26 +147,17 @@ public class main {
                       
               
             }
-            // }
-    //          //nana.enter(player);
-
              
              else if (player.getPositionIndex() ==  37 || currPosition.equals("Licorice")  ) {
-               // || 
-              //  if(!visitedLocations.contains("Licorice")){
-              System.out.println("You have stumbled upon the sticky.....Licorice Lagoon. Press any number to waddle in !");
-              // System.out.println("i'm breaking on line 2");
-              int playerInput = scanner.nextInt();
-              // System.out.println("i'm breaking on line 3");
+                System.out.println("It's sticky ! It's sweet ! And it has gotten up to your knees! You have stumbled into the sticky.....Licorice Lagoon. Waddle in! Discover more! And to do so , just enter your favorite number here!");
+                int playerInput = scanner.nextInt();
 
               LicoriceLagoon lagoon = new LicoriceLagoon("Licorice Lagoon",playerInput);
               lagoon.printPathName();
               scanner.nextLine();
               lagoon.startChallenge();
-              // lagoon.finalSentiment();
               }
 
-    //             lagoon.enter(player);
             
 
              else if (player.getPositionIndex() == 47 || currPosition.equals("Lollipop")) {
@@ -203,7 +196,8 @@ public class main {
                     player.setHasWon(true);
                 } else {
                     System.out.println("\n You reached the castle, but you don't have the final key! Find the Frosted Palace first.");
-                }}
+                }
+              }
 
 
             // Check if the player has died

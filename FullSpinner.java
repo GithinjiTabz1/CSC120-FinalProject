@@ -34,6 +34,12 @@ public class FullSpinner {
         parts.add(new SpinnerPart("Blue"));    
         parts.add(new SpinnerPart("Orange"));
         parts.add(new SpinnerPart("Green"));
+        parts.add(new SpinnerPart("Red"));
+        parts.add(new SpinnerPart("Purple"));
+        parts.add(new SpinnerPart("Yellow"));
+        parts.add(new SpinnerPart("Blue"));    
+        parts.add(new SpinnerPart("Orange"));
+        parts.add(new SpinnerPart("Green"));
 
         // Adding special candy tiles
         parts.add(new SpinnerPart("Peppermint")); 
@@ -81,4 +87,3 @@ public class FullSpinner {
         return "Congratulations! You have spun a " + this.part + ". You can now advance ahead to the " + this.part + " tile.";
     }
 }
-

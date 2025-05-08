@@ -32,13 +32,13 @@ public class LollipopCastle extends Castle {
         }
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Welcome to Lollipop Castle!");
+        System.out.println("Welcome to Lollipop Castle!A space in which the gravity is fickle and there's obstacles at each turn");
       //  System.out.println("Jump too low = caramel abyss. Jump too high = sucked into space.");
 
         boolean validJump = false;
 
         while (!validJump) {
-            System.out.print("Enter your jump height (100–500): ");
+            System.out.print("You are faced with several lollipop barred fences preventing you from escaping.\n The only way out is to utilize the weird gravity to jump out of the castle.\n But beware, your jumps may have consequences!\n How high would you like to jump ?");
     
             if (scanner.hasNextDouble()) {
                 height = scanner.nextDouble();
@@ -52,18 +52,18 @@ public class LollipopCastle extends Castle {
                     if (height >= 200 && height <= 400) {
                         System.out.println("Perfect jump! You land safely on the other side.");
                         player.setPositionIndex(52);
-                        System.out.println("You are teleported to the Frosted Palace!");
+                        System.out.println("Schwooop! You are teleported to the Frosted Palace! I hope you have a coat!");
                     } else if (height < 200) {
-                        System.out.println("Too low! You fall into the caramel abyss.......and fell to your death ! ");
+                        System.out.println("Too low! You fall into the gooey caramel abyss.......and fell to you death ! ");
                         player.setIsAlive(false);
                     } else {
-                        System.out.println("Too high! You’re sucked into the void of space... You unfortunately did not make it back");
+                        System.out.println("Too high! You’re sucked into the gaping void of space... and you unfortunately did not make it back");
                         player.setIsAlive(false);
                     }
                 }
             } else {
                 System.out.println("Please enter a valid number.");
-                scanner.next(); // Clear invalid input
+                scanner.next(); 
             }
         }
 

@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Scanner;
 
 /**
  * Represents King Kandy's Castle, the final destination in Candy Land.
