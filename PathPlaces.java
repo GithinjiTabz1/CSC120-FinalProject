@@ -45,9 +45,10 @@ public class PathPlaces {
     public String getPathName() {
         return this.name;
     }
-/*
-* Random questions in an Array List
-*/
+/**
+ * Adds a predefined set of trivia questions to the triviaQuestions list.
+ * This method adds fun questions  related to characters and settings in the Candy Land game to the list.
+ */
 protected void addString()  {
     triviaQuestions.add("What is the one secret to Nana's bizcocho recipe?");
     triviaQuestions.add("What is Queen Kandy's favorite color?");
