@@ -1,6 +1,4 @@
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -114,6 +112,16 @@ public class Player {
         return currPosition;
     }
 
+    public static void updateBoard(Player player, ArrayList<Map> board) {
+        for (int i = 0; i < board.size(); i++) {
+            if (i == player.getPositionIndex()) {
+                board.get(i).setPlayerPosition(player.getName());
+            } else {
+                board.get(i).setPlayerPosition("None");
+            }
+        }
+    }
+
     /**
      * Moves the player forward on the board until they land on a tile
      * that matches the spinner result. The player advances by checking each
@@ -125,8 +133,6 @@ public class Player {
      */
     public String move(SpinnerPart SpinnerOutput, ArrayList<Map> tiles) {
 
-
-
         while(this.positionIndex < tiles.size()&&!tiles.get(this.positionIndex).getColor().equals(SpinnerOutput.getColor())) {
             this.positionIndex += 1;
         }
@@ -137,15 +143,12 @@ public class Player {
         }
        
 
-
-        // while (this.positionIndex < tiles.size() &&
-        //        !tiles.get(this.positionIndex).equals(SpinnerOutput)) {
-        //     this.positionIndex += 1;
-        // }
-
         this.currPosition = SpinnerOutput.getColor();
         System.out.println("You have now advanced to the " + currPosition +" tile");
+        Player.updateBoard(this, tiles);
         return currPosition;
+
+
     }
 
     /**
@@ -172,13 +175,13 @@ public class Player {
                 symbol = "|~~" + player.getName().charAt(0) + "~~||";
 
 
-
-            } else if (!tile.getPlayerPosition().equals("None")) {
-
-
+            } 
+            else if (!tile.getPlayerPosition().equals("None")) 
+            {
                 // Use emojis or symbols for special locations
-                switch (tile.getPlayerPosition()) {
-                    case "Peppermint.":
+                switch (tile.getPlayerPosition()) 
+                {
+                    case "Peppermint":
                         symbol = "|P|"; 
                         break;
                     case "Nana's Nuthouse":
@@ -193,8 +196,8 @@ public class Player {
                     case "Frosted Palace":
                         symbol = "|❄️|"; 
                         break;
-                }
-            } else {
+                }}
+             else {
                 // Show tile color's first letter
                 symbol = "|_" + tile.getColor().charAt(0) + "_|";
                 

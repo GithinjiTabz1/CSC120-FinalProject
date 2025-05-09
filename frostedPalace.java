@@ -63,7 +63,7 @@ public class FrostedPalace extends Castle {
      */
     public static void startChallenge(Player player) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("\nWelcome to the Frosted Palace.");
+        System.out.println("\nYou've made your way to the coldest corner of Candy Land....the Frosted Palace.....Welcome.");
         System.out.println("Guess the number between 1 and 10. It's freezing in here!");
 
         boolean firstAttempt = true;

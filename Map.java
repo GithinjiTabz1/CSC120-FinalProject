@@ -4,9 +4,6 @@ public class Map {
     private String colorBlocks;
     private String playerPosition;
 
-    //
-    
-
 
     /* Constructor */
     public Map(Boolean position, String colorBlocks, String playerPosition){
@@ -54,11 +51,9 @@ public class Map {
     public String getColor() {
         return this.colorBlocks;
     }
-
     public String getLocation() {
         return this.playerPosition;
     }
-
 
 }
 

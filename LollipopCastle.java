@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import javax.swing.text.Position;
 
 /**
  * Represents the Lollipop Castle in Candy Land.

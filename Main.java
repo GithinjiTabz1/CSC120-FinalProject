@@ -1,8 +1,6 @@
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.Scanner;
-import java.util.Set;
 
 /**
  * Main class that runs the Candy Land game.
@@ -14,25 +12,21 @@ public class main {
       //scanner
         Scanner scanner = new Scanner(System.in);
         
-       
         //making the spinner
         FullSpinner spinner = new FullSpinner(); 
         spinner.addParts();
         spinner.spin();
 
-
         //making the map
         ArrayList<Map> map = new ArrayList<>();
         String[] colors = {"Red", "Purple", "Yellow", "Blue", "Orange", "Green"};
-        // ArrayList <String> visitedLocations = new ArrayList<>();
-        Set<String> visitedSpecialLocations = new HashSet<>();
 
 
         for (int i = 0; i < 60; i++){
             String color = colors[i % colors.length];
+            String location = "None"; 
            
            //setting locations so that we can assign tiles to specific special locations  
-            String location = "None";
 
 
             if (i == 15) {
@@ -55,18 +49,15 @@ public class main {
             location = "Frosted Palace";
           }
 
-          
-
+  
             
-            
-            
-            Map tiles = new Map(false, color, "None");
-            map.add(tiles);}
+          Map tiles = new Map(false, color, "None");
+          map.add(tiles);
+          }
 
 
         String name = Player.enterName();
         Player player = new Player(name,0);    
-        // System.out.println(map.getLocation());
     
         //starting display
 
@@ -84,7 +75,6 @@ public class main {
             String part = SpinnerOutput.getColor();
       
             System.out.println(spinner);
-            // boolean advancedFromNana = false;
 
             System.out.println("Congratulations! You have spun a " + SpinnerOutput.getColor() + ". You can now advance ahead to the " + SpinnerOutput.getColor() + " tile.");
 
@@ -92,31 +82,18 @@ public class main {
             //moving our player using our spinner output 
             player.move(SpinnerOutput,map);
             spinner.removeVisitedCandies(part);
-            // visitedSpecialLocations.add(part);
 
             //displaying our players movements
             Player.displayMotion(player, map);
-          
-
-            //System.out.println(currentPosition);
-            
-
-                
-
-
-    
+                    
 
          //  Handle special locations
             String currPosition = SpinnerOutput.getColor();
 
-           // System.out.println("here");
-           
-
-            if (player.getPositionIndex() == 15 || currPosition.equals("Peppermint"))   { // i tried to add & !visitedLocations.contains("Peppermint") so that people wouldnt keep visiting the peppermint forest but it kept causing an issue where it just would not go into the condition if I did an nad which makes sense and if I did an or it would just go into the condition even if I didnt spin peppermint should I consider a nested condition
-            // if( !visitedLocations.contains("Peppermint")){
+            if (player.getPositionIndex() == 15 || currPosition.equals("Peppermint"))   {
 
                 System.out.println("Suddenly, you are surrounded by the sweet,cool,minty aroma of peppermint . Before your very eyes immense red and white pinstriped trees sprout from the floor and surround you. You are now in ......the Peppermint forest.To wander deeper in, enter any number.");
-                int playerInput = scanner.nextInt(); //should I try abstraction or something so that the player can click any key ? - not a necessity
+                int playerInput = scanner.nextInt();
                 PeppermintForest peppermint = new PeppermintForest("Peppermint Forest",playerInput);
                 scanner.nextLine();
                 peppermint.printPathName(); 
@@ -126,7 +103,6 @@ public class main {
                 
 
              else if (player.getPositionIndex() == 22 || currPosition.equals("Peanut") ) {
-              // if(!visitedLocations.contains("Peanut")){
              
                 System.out.println("Awww nuts!!!You find yourself infront of the delicious...yet very dangerous Nana's nuthouse. To advance, press any number to come in !");
                   int playerInput = scanner.nextInt();
@@ -161,8 +137,7 @@ public class main {
             
 
              else if (player.getPositionIndex() == 47 || currPosition.equals("Lollipop")) {
-              //  if(!visitedLocations.contains("Lollipop")){
-                System.out.println("You made it to Lollipop Castle! Behold the glory !!!!!!!!!");
+                System.out.println("You made it to Lollipop Castle! Behold the glory !!!!!!!!!\n To proceed , whisper any number to us.");
                 int playerInput = scanner.nextInt();
                 LollipopCastle lollipop = new LollipopCastle();
                 Boolean hasKey = true; 
@@ -180,8 +155,7 @@ public class main {
                
                 }
             else if (player.getPositionIndex() == 52 || currPosition.equals("Icecream")) {
-                // if(!visitedLocations.contains("IceCream")){
-                  System.out.println("You’ve reached the Frosted Palace.");
+                  System.out.println("You’ve reached the Frosted Palace. Enter any number to step inside");
                   int playerInput = scanner.nextInt();
                   FrostedPalace frosted = new FrostedPalace();
                   frosted.startChallenge(player);
