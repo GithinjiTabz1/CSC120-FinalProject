@@ -36,7 +36,12 @@ The game board consists of 60 tiles with the following special locations:
 
 4.  Lollipop Castle Challenge: Requirement: You must have the key from Licorice Lagoon to enter. The challenge is to choose a jumping number. If the player chooses one of the correct numbers between 200 and 400, the player succeeds, survives, and is teleported to Frosted Palace. If the player does not choose the correct number, they fail the challenge and will have to take the long way to the Frosted Palace. Goal: Earn the key to Frosted Palace by attempting the challenge.
 
-5. Frosted Palace Challenge: Requirement: Must have the key from Lollipop Castle to enter. The challenge is the guessing game in the cold. The player must guess a number between 1 and 10. The player's temperature drops as they guess the incorrect number. If the player guesses the number correctly, on the first try, they are teleported directly to Queen Kandy's Castle. If the player guesses correctly later, they get the kep but must take the long way to Queen Kandy's Castle. If the temperature drops to 0°F the player freezes to death. The goal is to survive and earn the key to Queen Kandy’s Castle.
+5. Frosted Palace Challenge: Requirement: Must have the key from Lollipop Castle to enter. The challenge is the guessing game in the cold. The player must guess a number between 1 and 10. The player's temperature drops as they guess the incorrect number. If the player guesses the number correctly, on the first try, they are teleported directly to King Kandy's Castle. If the player guesses correctly later, they get the kep but must take the long way to King Kandy's Castle. If the temperature drops to 0°F the player freezes to death. The goal is to survive and earn the key to King Kandy’s Castle.
+
+6. King Kandy's Castle (Tile 60)
+You must have the Key from the frosted palace.
+This is the final destination.
+Once you get in the castle,you've won the game.
 
 ## Winning Conditions
 To win the game, you must:
